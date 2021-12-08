@@ -1,0 +1,13 @@
+{
+  "name": "catalogo-service",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "moleculer": "^0.14.18",
+    "moleculer-repl": "^0.6.6",
+    "moleculer-web": "^0.10.3"
+  }
+}
