@@ -3,7 +3,8 @@ Links utilizados:
 ## MongoDB Atlas
 https://www.mongodb.com/atlas/
 
-Foi configurada uma variável de embiente .env (renomear o arquivo de exemplo .env.example), onde deve-se colocar URL de coneção com o MongoDB Atlas.
+Foi configurada uma variável de embiente .env , onde deve-se colocar URL de coneção com o MongoDB Atlas.
+Renomear o arquivo de exemplo .env.example e colocar nos respectivos serviçoes que usarão a conexão com MongoDB, exemplo assinatura-service/.env .
 
 
 ## Moleculer
