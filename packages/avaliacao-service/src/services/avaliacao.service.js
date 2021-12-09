@@ -5,19 +5,27 @@ module.exports = {
   name: "avaliacao-service",
   version: 1,
   dependencies: [
-    "v1.catalogo-service"
+    "v1.catalogo-service",
+    "v1.assinatura-service"
   ],
   actions: {
     async avaliar(ctx) {
       const idFilme = ctx.params.idFilme;
+      const idAssinante = ctx.params.idAssinante;
       const nota = ctx.params.nota;
 
-      const exists = await ctx.call("v1.catalogo-service.exists", {
+      const filmeExists = await ctx.call("v1.catalogo-service.exists", {
         id: idFilme
       });
+      const assinanteExists = await ctx.call("v1.assinatura-service.exists", {
+        id: idAssinante
+      });
 
-      if (!exists) {
+      if (!filmeExists) {
         throw "O filme informado não existe!";
+      }
+      if (!assinanteExists) {
+        throw "O assinante informado não existe!";
       }
 
       if (nota < 0 || nota > 5) {
@@ -25,8 +33,14 @@ module.exports = {
       }
 
       return Avaliacao.create({
-        idFilme, nota
+        idFilme, idAssinante, nota
       });
-    }
+    },
+    list: {
+      async handler(ctx) {
+        console.log("esse serviço foi chamado");
+        return await Avaliacao.find();
+      }
+    },
   }
 }

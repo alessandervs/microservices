@@ -11,7 +11,10 @@ module.exports = {
         aliases: {
           "POST /catalogo": "v1.catalogo-service.create",
           "GET /catalogo": "v1.catalogo-service.list",
-          "POST /avaliacao/:idFilme": "v1.avaliacao-service.avaliar"
+          "POST /assinatura": "v1.assinatura-service.create",
+          "GET /assinatura": "v1.assinatura-service.list",
+          "POST /avaliacao/:idFilme": "v1.avaliacao-service.avaliar",
+          "GET /avaliacao": "v1.avaliacao-service.list"
         }
       }
     ]

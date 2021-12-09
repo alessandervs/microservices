@@ -1,9 +1,11 @@
 const { ServiceBroker } = require("moleculer");
 const mongoose = require("mongoose");
+require("dotenv/config");
 
 (async () => {
-  await mongoose.connect("mongodb+srv://guilherme:workshop@ebac-workshop.dtenm.mongodb.net/catalogo?retryWrites=true&w=majority");
-
+  const url = process.env.URL_MONGODB;
+  await mongoose.connect(url);
+  
   const broker = new ServiceBroker({
     transporter: "TCP"
   });

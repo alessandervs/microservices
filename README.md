@@ -14,3 +14,6 @@ https://mongoosejs.com/
 
 ## Lerna
 https://github.com/lerna/
+
+## Nodemon
+Pacote para controlar reinicialização dos serviçoes automáticamente ao salvar alteração nos arquivos do projetoo.
