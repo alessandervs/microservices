@@ -1,1 +1,7 @@
 **/node_modules
+**/packages/api-gateway/node_modules
+**/packages/avaliacao-service/node_modules
+**/packages/catalogo-service/node_modules
+**/packages/assinatura-service/node_modules
+
+.env
